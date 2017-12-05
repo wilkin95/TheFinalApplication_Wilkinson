@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Songs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Song>
+		<ID>1</ID>
+		<Title>Failure</Title>
+		<Artist>Breaking Benjamin</Artist>
+		<Album>Dark Before Dawn</Album>
+		<Length>220</Length>
+		<Published>1999-01-01</Published>
+		<Genre>Alternative Rock</Genre>
+	</Song>
+	<Song>
+		<ID>2</ID>
+		<Title>Angels Fall</Title>
+		<Artist>Breaking Benjamin</Artist>
+		<Album>Dark Before Dawn</Album>
+		<Length>247</Length>
+		<Published>1999-01-01</Published>
+		<Genre>Alternative Rock</Genre>
+	</Song>
+	<Song>
+		<ID>3</ID>
+		<Title>Sound of Silence</Title>
+		<Artist>Disturbed</Artist>
+		<Album>Immortalized</Album>
+		<Length>259</Length>
+		<Published>1999-01-01</Published>
+		<Genre>Heavy Metal</Genre>
+	</Song>
+	<Song>
+		<ID>4</ID>
+		<Title>Wrong Side of Heaven</Title>
+		<Artist>Five Finger Death Punch</Artist>
+		<Album>Wrong Side of Heaven and the Righteous Side of Hell</Album>
+		<Length>271</Length>
+		<Published>1999-01-01</Published>
+		<Genre>Alternative Metal</Genre>
+	</Song>
+	<Song>
+		<ID>5</ID>
+		<Title>Wash It All Away</Title>
+		<Artist>Five Finger Death Punch</Artist>
+		<Album>Got Your Six</Album>
+		<Length>225</Length>
+		<Published>1999-01-01</Published>
+		<Genre>Heavy Metal</Genre>
+	</Song>
+	<Song>
+		<ID>6</ID>
+		<Title>If Today Was Your Last Day</Title>
+		<Artist>Nickelback</Artist>
+		<Album>Dark Horse</Album>
+		<Length>246</Length>
+		<Published>1999-01-01</Published>
+		<Genre>Pop Rock</Genre>
+	</Song>
+	<Song>
+		<ID>7</ID>
+		<Title>Gotta Be Somebody</Title>
+		<Artist>Nickelback</Artist>
+		<Album>Dark Horse</Album>
+		<Length>251</Length>
+		<Published>1999-01-01</Published>
+		<Genre>Pop Rock</Genre>
+	</Song>
+	<Song>
+		<ID>8</ID>
+		<Title>You Don't Own Me</Title>
+		<Artist>Grace</Artist>
+		<Album>Suicide Squad Soundtrack</Album>
+		<Length>192</Length>
+		<Published>1999-01-01</Published>
+		<Genre>R&amp;B</Genre>
+	</Song>
+	<Song>
+		<ID>9</ID>
+		<Title>Come With Me Now</Title>
+		<Artist>Kongos</Artist>
+		<Album>Lunatic</Album>
+		<Length>211</Length>
+		<Published>1999-01-01</Published>
+		<Genre>Alternative Rock</Genre>
+	</Song>
+	<Song>
+		<ID>10</ID>
+		<Title>Unforgiven</Title>
+		<Artist>Metallica</Artist>
+		<Album>The Black Album</Album>
+		<Length>387</Length>
+		<Published>1999-01-01</Published>
+		<Genre>Heavy Metal</Genre>
+	</Song>
+	<Song>
+		<ID>11</ID>
+		<Title>Broken </Title>
+		<Artist>Seether</Artist>
+		<Album>Disclaimer II</Album>
+		<Length>261</Length>
+		<Published>1999-01-01</Published>
+		<Genre>Post-Grunge</Genre>
+	</Song>
+	<Song>
+		<ID>12</ID>
+		<Title>Numb</Title>
+		<Artist>Linkin Park</Artist>
+		<Album>Meteora</Album>
+		<Length>186</Length>
+		<Published>1999-01-01</Published>
+		<Genre>Nu Metal</Genre>
+	</Song>
+	<Song>
+		<ID>13</ID>
+		<Title>In The End</Title>
+		<Artist>Linkin Park</Artist>
+		<Album>Hybrid Theory</Album>
+		<Length>217</Length>
+		<Published>1999-01-01</Published>
+		<Genre>Nu Metal</Genre>
+	</Song>
+	<Song>
+		<ID>14</ID>
+		<Title>Radioactive</Title>
+		<Artist>Imagine Dragons</Artist>
+		<Album>Night Visions</Album>
+		<Length>185</Length>
+		<Published>1999-01-01</Published>
+		<Genre>Alternative Rock</Genre>
+	</Song>
+	<Song>
+		<ID>15</ID>
+		<Title>Go To War</Title>
+		<Artist>Nothing More</Artist>
+		<Album>The Stories We Tell Ourselves</Album>
+		<Length>247</Length>
+		<Published>1999-01-01</Published>
+		<Genre>Hard Rock</Genre>
+	</Song>
+</Songs>
