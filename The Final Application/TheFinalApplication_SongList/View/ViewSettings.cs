@@ -10,7 +10,7 @@ namespace TheFinalApplication_SongList
     {
         // window size
         //
-        public const int WINDOW_WIDTH = 200;
+        public const int WINDOW_WIDTH = 160;
         public const int WINDOW_HEIGHT = 40;
 
         //

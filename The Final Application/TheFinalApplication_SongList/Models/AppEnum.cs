@@ -18,7 +18,7 @@ namespace TheFinalApplication_SongList
             UpdateSong,
             QuerySongByArtist,
             QuerySongByAlbum,
-            QuerySongByGenre,
+            SortSongByLength,
             PlaySong,
             Quit
      

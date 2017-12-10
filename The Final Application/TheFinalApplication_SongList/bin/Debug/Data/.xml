@@ -28,7 +28,7 @@
 		<ID>4</ID>
 		<Title>Wrong Side of Heaven</Title>
 		<Artist>Five Finger Death Punch</Artist>
-		<Album>Wrong Side of Heaven</Album>
+		<Album>Wrong Side of Heaven and the Righteous Side of Hell</Album>
 		<Length>271</Length>
 		<Genre>Alternative Metal</Genre>
 	</Song>
@@ -119,5 +119,45 @@
 		<Album>The Stories We Tell Ourselves</Album>
 		<Length>247</Length>
 		<Genre>Hard Rock</Genre>
+	</Song>
+	<Song>
+		<ID>16</ID>
+		<Title>The Devil's Bleeding Crown</Title>
+		<Artist>Volbeat</Artist>
+		<Album>Seal the Deal &amp; Let's Boogie</Album>
+		<Length>238</Length>
+		<Genre>Heavy Metal</Genre>
+	</Song>
+	<Song>
+		<ID>17</ID>
+		<Title>State of My Head</Title>
+		<Artist>Shinedown</Artist>
+		<Album>Threat to Survival</Album>
+		<Length>205</Length>
+		<Genre>Alternative Rock</Genre>
+	</Song>
+	<Song>
+		<ID>18</ID>
+		<Title>Voodoo</Title>
+		<Artist>Godsmack</Artist>
+		<Album>Godsmack</Album>
+		<Length>280</Length>
+		<Genre>Nu Metal</Genre>
+	</Song>
+	<Song>
+		<ID>19</ID>
+		<Title>The Light</Title>
+		<Artist>Disturbed</Artist>
+		<Album>Immortalized</Album>
+		<Length>256</Length>
+		<Genre>Heavy Metal</Genre>
+	</Song>
+	<Song>
+		<ID>20</ID>
+		<Title>Ashes of Eden</Title>
+		<Artist>Breaking Benjamin</Artist>
+		<Album>Dark Before Dawn</Album>
+		<Length>293</Length>
+		<Genre>Alternative Rock</Genre>
 	</Song>
 </Songs>

@@ -95,8 +95,7 @@ namespace TheFinalApplication_SongList
 
         public static string ValidateStringResponse(string promptMessage, string userResponse)
         {
-            string validUserResponse = "";
-
+ 
             while (userResponse == "")
             {
                 // ConsoleView.DisplayReset();
@@ -110,12 +109,12 @@ namespace TheFinalApplication_SongList
                 int left = Console.CursorLeft;
                 int top = Console.CursorTop;
                 Console.ResetColor();
-                Console.SetCursorPosition(left + 100, top + 1);
+                Console.SetCursorPosition(left + 80, top + 1);
 
-               validUserResponse = Console.ReadLine();
+               userResponse = Console.ReadLine();
             }
 
-            return validUserResponse;
+            return userResponse;
         }
 
         public static int ValidateIntegerResponse(string promptMessage, string userResponse)
@@ -161,7 +160,7 @@ namespace TheFinalApplication_SongList
                 int left = Console.CursorLeft;
                 int top = Console.CursorTop;
                 Console.ResetColor();
-                Console.SetCursorPosition(left + 100, top + 1);
+                Console.SetCursorPosition(left + 80, top + 1);
                 userResponse = Console.ReadLine();
             }
 

@@ -7,7 +7,7 @@ using System.Media;
 
 namespace TheFinalApplication_SongList
 {
-   public class Controller
+    public class Controller
     {
         bool active = true;
         static ISongListRepository songListRepository;
@@ -20,9 +20,9 @@ namespace TheFinalApplication_SongList
 
         private void ApplicationControl()
         {
-             ConsoleView.DisplayWelcomeScreen();
+            ConsoleView.DisplayWelcomeScreen();
 
-            while(active)
+            while (active)
             {
                 AppEnum.ManagerAction userActionChoice;
 
@@ -33,10 +33,10 @@ namespace TheFinalApplication_SongList
                     case AppEnum.ManagerAction.None:
                         break;
                     case AppEnum.ManagerAction.ListAllSongs:
-                        ListAllSongs();                   
+                        ListAllSongs();
                         break;
                     case AppEnum.ManagerAction.DisplaySongDetail:
-                         DisplaySongDetail();
+                        DisplaySongDetail();
                         break;
                     case AppEnum.ManagerAction.DeleteSong:
                         DeleteSong();
@@ -53,14 +53,14 @@ namespace TheFinalApplication_SongList
                     case AppEnum.ManagerAction.QuerySongByAlbum:
                         QuerySongsByAlbum();
                         break;
-                    case AppEnum.ManagerAction.QuerySongByGenre:
-                        QuerySongsByGenre();
+                    case AppEnum.ManagerAction.SortSongByLength:
+                        SortSongsByLength();
                         break;
                     case AppEnum.ManagerAction.PlaySong:
                         PlaySong();
                         break;
                     case AppEnum.ManagerAction.Quit:
-                        active = false;                     
+                        active = false;
                         break;
                     default:
                         break;
@@ -77,111 +77,136 @@ namespace TheFinalApplication_SongList
             Song song;
             int songID;
             bool usingPlayer = true;
-
+            bool usingControls = false;
 
             using (songListBusiness)
             {
                 songs = songListBusiness.SelectAll();
                 ConsoleView.DisplayAllSongs(songs);
                 songID = ConsoleView.GetSongID(songs);
+
                 song = songListBusiness.SelectByID(songID);
             }
 
             while (usingPlayer == true)
             {
-                Console.Clear();
-                ConsoleView.DisplaySong(song);
 
+                while (!usingControls)
+                {
+                    Console.Clear();
+                    ConsoleView.DisplaySong(song);
 
-                int songControl = ConsoleView.DisplaySongControls();
-                if (songControl == 1)
-                {
-                    if (songID == 1)
+                    int songControl = ConsoleView.DisplaySongControls();
+
+                    if (songControl == 1)
                     {
-                        myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\Failure.wav";
-                        myPlayer.Play();
+                        if (songID == 1)
+                        {
+                            myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\Failure.wav";
+                            myPlayer.Play();
+                            usingPlayer = true;
+                            break;
+                        }
+                        if (songID == 2)
+                        {
+                            myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\AngelsFall.wav";
+                            myPlayer.Play();
+                            break;
+                        }
+                        if (songID == 3)
+                        {
+                            myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\TheSoundOfSilence.wav";
+                            myPlayer.Play();
+                            break;
+                        }
+                        if (songID == 4)
+                        {
+                            myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\WrongSideOfHeaven.wav";
+                            myPlayer.Play();
+                            break;
+                        }
+                        if (songID == 5)
+                        {
+                            myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\WashItAllAway.wav";
+                            myPlayer.Play();
+                            break;
+                        }
+                        if (songID == 6)
+                        {
+                            myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\IfTodayWasYourLastDay.wav";
+                            myPlayer.Play();
+                            break;
+                        }
+                        if (songID == 7)
+                        {
+                            myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\GottaBeSomebody.wav";
+                            myPlayer.Play();
+                            break;
+                        }
+                        if (songID == 8)
+                        {
+                            myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\YouDontOwnMe.wav";
+                            myPlayer.Play();
+                            break;
+                        }
+                        if (songID == 9)
+                        {
+                            myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\ComeWithMeNow.wav";
+                            myPlayer.Play();
+                            break;
+                        }
+                        if (songID == 10)
+                        {
+                            myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\TheUnforgiven.wav";
+                            myPlayer.Play();
+                            break;
+                        }
+                        if (songID == 11)
+                        {
+                            myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\Broken.wav";
+                            myPlayer.Play();
+                            break;
+                        }
+                        if (songID == 12)
+                        {
+                            myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\Numb.wav";
+                            myPlayer.Play();
+                            break;
+                        }
+                        if (songID == 13)
+                        {
+                            myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\InTheEnd.wav";
+                            myPlayer.Play();
+                            break;
+                        }
+                        if (songID == 14)
+                        {
+                            myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\Radioactive.wav";
+                            myPlayer.Play();
+                            break;
+                        }
+                        if (songID == 15)
+                        {
+                            myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\GoToWar.wav";
+                            myPlayer.Play();
+                            break;
+                        }
+                        else
+                        {
+                            ConsoleView.SongNotAvailableToPlay();
+                            usingPlayer = false;
+                        }
+                        usingControls = true;
                     }
-                    if (songID == 2)
+                    if (songControl == 2)
                     {
-                        myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\AngelsFall.wav";
-                        myPlayer.Play();
+                        myPlayer.Stop();
+                        usingPlayer = false;
+                        usingControls = false;
+                        break;
                     }
-                    if (songID == 3)
-                    {
-                        myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\TheSoundOfSilence.wav";
-                        myPlayer.Play();
-                    }
-                    if (songID == 4)
-                    {
-                        myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\WrongSideOfHeaven.wav";
-                        myPlayer.Play();
-                    }
-                    if (songID == 5)
-                    {
-                        myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\WashItAllAway.wav";
-                        myPlayer.Play();
-                    }
-                    if (songID == 6)
-                    {
-                        myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\IfTodayWasYourLastDay.wav";
-                        myPlayer.Play();
-                    }
-                    if (songID == 7)
-                    {
-                        myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\GottaBeSomebody.wav";
-                        myPlayer.Play();
-                    }
-                    if (songID == 8)
-                    {
-                        myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\YouDontOwnMe.wav";
-                        myPlayer.Play();
-                    }
-                    if (songID == 9)
-                    {
-                        myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\ComeWithMeNow.wav";
-                        myPlayer.Play();
-                    }
-                    if (songID == 10)
-                    {
-                        myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\TheUnforgiven.wav";
-                        myPlayer.Play();
-                    }
-                    if (songID == 11)
-                    {
-                        myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\Broken.wav";
-                        myPlayer.Play();
-                    }
-                    if (songID == 12)
-                    {
-                        myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\Numb.wav";
-                        myPlayer.Play();
-                    }
-                    if (songID == 13)
-                    {
-                        myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\InTheEnd.wav";
-                        myPlayer.Play();
-                    }
-                    if (songID == 14)
-                    {
-                        myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\Radioactive.wav";
-                        myPlayer.Play();
-                    }
-                    if (songID == 15)
-                    {
-                        myPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "Controller\\GoToWar.wav";
-                        myPlayer.Play();
-                    }
+
                 }
-                if (songControl == 2)
-                {
-                    myPlayer.Stop();
-                    usingPlayer = false;
-                }
-                //else
-                //{
-                //    Console.WriteLine("I'm sorry, there is not a music file for that song yet.");
-                //    usingPlayer = false;
-                //}
             }
             ConsoleView.DisplayGoBackToMenu();
 
@@ -199,7 +224,7 @@ namespace TheFinalApplication_SongList
             }
         }
 
-       
+
 
         private static void DisplaySongDetail()
         {
@@ -221,11 +246,14 @@ namespace TheFinalApplication_SongList
         private static void AddSong()
         {
             SongListBusiness songListBusiness = new SongListBusiness(songListRepository);
+            List<Song> songs;
             Song song;
 
-            song = ConsoleView.AddSong();
+
             using (songListBusiness)
             {
+                songs = songListBusiness.SelectAll();
+                song = ConsoleView.AddSong(songs);
                 songListBusiness.Insert(song);
             }
             ConsoleView.DisplayGoBackToMenu();
@@ -235,17 +263,31 @@ namespace TheFinalApplication_SongList
         {
             SongListBusiness songListBusiness = new SongListBusiness(songListRepository);
             List<Song> songs;
-            Song song;
+            Song editSong;
             int songID;
-
+            bool exist = false;
             using (songListBusiness)
             {
                 songs = songListBusiness.SelectAll();
                 songID = ConsoleView.GetSongID(songs);
-                song = songListBusiness.SelectByID(songID);
-                song = ConsoleView.UpdateSong(song);
-                songListBusiness.Update(song);
+                foreach (Song song in songs)
+                {
+                    if (song.ID == songID)
+                    {
+                        editSong = songListBusiness.SelectByID(songID);
+                        editSong = ConsoleView.UpdateSong(editSong);
+                        songListBusiness.Update(editSong);
+                        exist = true;
+                    }                    
+                }
+                if (exist == false)
+                {                     
+                        Console.WriteLine(ConsoleUtil.Center("That song ID does not exist. ", 160));                    
+                }
+
             }
+            ConsoleView.DisplayGoBackToMenu();
+
         }
 
         private static void DeleteSong()
@@ -254,25 +296,50 @@ namespace TheFinalApplication_SongList
             List<Song> songs;
             int songID;
             string message;
+            bool checkingSongs = true;
 
             using (songListBusiness)
             {
+
                 songs = songListBusiness.SelectAll();
                 songID = ConsoleView.GetSongID(songs);
-               
-                songListBusiness.Delete(songID);
-            }
-            ConsoleView.DisplayReset();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            message = String.Format("Song ID: {0} has been deleted.", songID);
-            
-            ConsoleView.DisplayMessage(message);
-            ConsoleView.DisplayMessage(message);
+                
+                while (checkingSongs)
+                {
+                    foreach (Song song in songs)
+                    {
+                        if (song.ID == songID)
+                        {
+                            songListBusiness.Delete(songID);
 
-            ConsoleView.DisplayGoBackToMenu();
+                            ConsoleView.DisplayReset();
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            message = String.Format("Song ID: {0} has been deleted.", songID);
+
+                            ConsoleView.DisplayMessage(message);
+                            checkingSongs = false;
+                            break;
+                        }
+
+                    }
+                    if (checkingSongs == true)
+                    {
+                        Console.WriteLine(ConsoleUtil.Center("That song ID does not exist. ", 160));
+                        checkingSongs = false;
+                        break;
+                    }
+                }
+
+            }
+
+            //Console.Write(ConsoleUtil.Center("Press any key to go back to menu.", 160));
+            //ConsoleKeyInfo response = Console.ReadKey();
+            //Console.CursorVisible = true;
+
+             ConsoleView.DisplayGoBackToMenu();
         }
 
         private static void QuerySongsByArtist()
@@ -280,18 +347,26 @@ namespace TheFinalApplication_SongList
             SongListBusiness songListBusiness = new SongListBusiness(songListRepository);
 
             List<Song> matchingSongs;
-            
 
-           string artist = ConsoleView.GetArtistQuery();
-            
-            using (songListBusiness)
+
+            string artist = ConsoleView.GetArtistQuery();
+            if (artist != "")
             {
-                matchingSongs = songListBusiness.QueryByArtist(artist);
+                using (songListBusiness)
+                {
+                    matchingSongs = songListBusiness.QueryByArtist(artist);
+                }
+                ConsoleView.DisplayQueryResults(matchingSongs);
             }
-             ConsoleView.DisplayQueryResults(matchingSongs);
+            else
+            {
+                Console.WriteLine();
+                Console.Write(ConsoleUtil.Center("No name was entered.", 160));
+
+            }
             ConsoleView.DisplayGoBackToMenu();
 
-            }
+        }
 
         private static void QuerySongsByAlbum()
         {
@@ -301,33 +376,38 @@ namespace TheFinalApplication_SongList
 
 
             string album = ConsoleView.GetAlbumQuery();
-
-            using (songListBusiness)
+            if (album != "")
             {
-                matchingSongs = songListBusiness.QueryByAlbum(album);
+                using (songListBusiness)
+                {
+                    matchingSongs = songListBusiness.QueryByAlbum(album);
+                }
+                ConsoleView.DisplayQueryResults(matchingSongs);
             }
-            ConsoleView.DisplayQueryResults(matchingSongs);
+            else
+            {
+                Console.WriteLine();
+                Console.Write(ConsoleUtil.Center("No name was entered.", 160));
+
+            }
             ConsoleView.DisplayGoBackToMenu();
 
         }
 
-        private static void QuerySongsByGenre()
+        private static void SortSongsByLength()
         {
             SongListBusiness songListBusiness = new SongListBusiness(songListRepository);
 
-            List<Song> matchingSongs;
-
-
-            string genre = ConsoleView.GetGenreQuery();
+            List<Song> sortedSongs;
 
             using (songListBusiness)
             {
-                matchingSongs = songListBusiness.QueryByGenre(genre);
+                sortedSongs = songListBusiness.SelectAll().OrderByDescending(s => s.Length).ToList();
             }
-            ConsoleView.DisplayQueryResults(matchingSongs);
+            ConsoleView.DisplayQueryResults(sortedSongs);
             ConsoleView.DisplayGoBackToMenu();
 
         }
     }
-    }
- 
+}
+

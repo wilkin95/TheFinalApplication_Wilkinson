@@ -8,7 +8,7 @@ namespace TheFinalApplication_SongList
 {
    public class DataSettings
     {
-        public const string dataFilePath = @"Data\SongList4.xml";
+        public const string dataFilePath = @"Data\SongList6.xml";
 
     }
 }
